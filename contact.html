@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact the Massachusetts Cannabis Expo team for information, registration, sponsorship opportunities, and vendor applications.">
+    <meta name="keywords" content="cannabis expo contact, cannabis event registration, cannabis sponsorship inquiry, cannabis vendor application">
+    <title>Contact & Registration | Massachusetts Cannabis Expo 2025</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Contact Page Specific Styles */
+        .page-banner {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/contact-banner.jpg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+        
+        .page-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .page-banner p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        .contact-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-tab {
+            background-color: #f8f9fa;
+            color: var(--grey-color);
+            border: none;
+            padding: 15px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .contact-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .contact-tab:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .contact-content {
+            display: none;
+        }
+        
+        .contact-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .contact-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 40px;
+        }
+        
+        .contact-card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px 30px;
+        }
+        
+        .contact-card-header h3 {
+            margin-bottom: 5px;
+        }
+        
+        .contact-card-body {
+            padding: 30px;
+        }
+        
+        .contact-form {
+            margin-top: 20px;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(60, 179, 113, 0.2);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .form-check {
+            margin-bottom: 20px;
+        }
+        
+        .form-check label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .form-check input {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        .form-message {
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .form-message.info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .organizers-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .organizers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .organizer-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .organizer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .organizer-image {
+            width: 100%;
+            height: 250px;
+            background-color: #e9ecef;
+            position: relative;
+        }
+        
+        .organizer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .organizer-image .placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            color: var(--grey-color);
+        }
+        
+        .organizer-image .placeholder i {
+            font-size: 3rem;
+        }
+        
+        .organizer-content {
+            padding: 25px;
+        }
+        
+        .organizer-content h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .organizer-role {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .organizer-bio {
+            color: var(--grey-color);
+            margin-bottom: 20px;
+        }
+        
+        .map-section {
+            padding: 80px 0;
+        }
+        
+        .map-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            margin-top: 40px;
+        }
+        
+        .location-details {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .location-details h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .location-details p {
+            margin-bottom: 20px;
+        }
+        
+        .countdown-container {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .countdown-title {
+            margin-bottom: 30px;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            width: 100px;
+            padding: 15px 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @media (max-width: 768px) {
+            .page-banner h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-tab {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+                flex: 1;
+            }
+            
+            .contact-card-body {
+                padding: 20px;
+            }
+            
+            .countdown-item {
+                width: 80px;
+                padding: 10px;
+            }
+            
+            .countdown-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="Massachusetts Cannabis Expo Logo"></a>
+            </div>
+            <nav id="main-nav">
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="meet-the-plug.html">Meet the Plug</a></li>
+                    <li><a href="job-fair.html">Job Fair</a></li>
+                    <li><a href="commissioners.html">Commissioners</a></li>
+                    <li><a href="battle-of-budtenders.html">Battle of the Budtenders</a></li>
+		    <li><a href="sponsors.html">Sponsors</a></li>
+                    <li><a href="food.html">Food & Catering</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>Contact & Registration</h1>
+            <p>Get in touch with the Massachusetts Cannabis Expo team</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-intro">
+                <h2>How Can We Help You?</h2>
+                <p>Whether you're interested in attending, exhibiting, sponsoring, or have general questions about the Massachusetts Cannabis Expo, we're here to assist you. Select the appropriate option below to get started.</p>
+            </div>
+            
+            <div class="contact-tabs">
+                <button class="contact-tab active" data-tab="general">General Inquiry</button>
+                <button class="contact-tab" data-tab="register">Event Registration</button>
+                <button class="contact-tab" data-tab="vendor">Vendor Application</button>
+                <button class="contact-tab" data-tab="sponsorship">Sponsorship</button>
+                <button class="contact-tab" data-tab="media">Media Inquiry</button>
+            </div>
+            
+            <div id="general" class="contact-content active">
+                <div class="contact-card">
+                    <div class="contact-card-header">
+                        <h3>General Inquiry</h3>
+                        <p>Have a question? We'd love to hear from you!</p>
+                    </div>
+                    <div class="contact-card-body">
+                        <div id="form-message" class="form-message"></div>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Your Name *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject *</label>
+                                    <input type="text" id="subject" name="subject" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Your Message *</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            
+                            <div class="form-check">
+                                <label>
+                                    <input type="checkbox" name="newsletter" checked>
+                                    Subscribe to our newsletter for updates about the expo
+                                </label>
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="btn primary-btn">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="register" class="contact-content">
+                <div class="contact-card">
+                    <div class="contact-card-header">
+                        <h3>Event Registration</h3>
+                        <p>Register to attend the Massachusetts Cannabis Expo 2025</p>
+                    </div>
+                    <div class="contact-card-body">
+                        <div id="register-message" class="form-message"></div>
+                        <form id="register-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="reg-name">Full Name *</label>
+                                    <input type="text" id="reg-name" name="reg-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="reg-email">Email Address *</label>
+                                    <input type="email" id="reg-email" name="reg-email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="reg-phone">Phone Number *</label>
+                                    <input type="tel" id="reg-phone" name="reg-phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="reg-company">Company/Organization (if applicable)</label>
+                                    <input type="text" id="reg-company" name="reg-company">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="reg-ticket">Ticket Type *</label>
+                                    <select id="reg-ticket" name="reg-ticket" required>
+                                        <option value="">-- Select Ticket Type --</option>
+                                        <option value="friday-free">Friday Pass (Free)</option>
+                                        <option value="saturday">Saturday Pass ($25)</option>
+                                        <option value="b2b-lunch">B2B Lunch Add-on ($50)</option>
+                                        <option value="vip">VIP Experience (Contact for Pricing)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="reg-quantity">Number of Tickets *</label>
+                                    <select id="reg-quantity" name="reg-quantity" required>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="group">10+ (Group Rate)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reg-interests">What are you most interested in at the expo? (Select all that apply)</label>
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="interests[]" value="networking"> Networking Opportunities</label>
+                                </div>
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="interests[]" value="job-fair"> Job Fair</label>
+                                </div>
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="interests[]" value="meet-the-plug"> Meet the Plug</label>
+                                </div>
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="interests[]" value="commissioners"> Meet the Commissioners</label>
+                                </div>
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="interests[]" value="shark-tank"> Cannabis "Shark Tank"</label>
+                                </div>
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="interests[]" value="budtender"> Battle of the Budtender</label>
+                                </div>
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="interests[]" value="music"> Music Festival</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reg-notes">Special Requests or Notes</label>
+                                <textarea id="reg-notes" name="reg-notes"></textarea>
+                            </div>
+                            
+                            <div class="form-check">
+                                <label>
+                                    <input type="checkbox" name="terms" required>
+                                    I confirm that I am 21 years or older and agree to the terms and conditions *
+                                </label>
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="btn primary-btn">Register Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="vendor" class="contact-content">
+                <div class="contact-card">
+                    <div class="contact-card-header">
+                        <h3>Vendor Application</h3>
+                        <p>Apply to be a vendor at the Massachusetts Cannabis Expo 2025</p>
+                    </div>
+                    <div class="contact-card-body">
+                        <div id="vendor-message" class="form-message"></div>
+                        <form id="vendor-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="vendor-name">Full Name *</label>
+                                    <input type="text" id="vendor-name" name="vendor-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vendor-email">Email Address *</label>
+                                    <input type="email" id="vendor-email" name="vendor-email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="vendor-phone">Phone Number *</label>
+                                    <input type="tel" id="vendor-phone" name="vendor-phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vendor-company">Company/Organization Name *</label>
+                                    <input type="text" id="vendor-company" name="vendor-company" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="vendor-website">Website (if applicable)</label>
+                                    <input type="url" id="vendor-website" name="vendor-website">
+                                </div>
+                                <div class="form-group">
+                                    <label for="vendor-type">Vendor Type *</label>
+                                    <select id="vendor-type" name="vendor-type" required>
+                                        <option value="">-- Select Vendor Type --</option>
+                                        <option value="cultivator">Licensed Cultivator</option>
+                                        <option value="dispensary">Dispensary</option>
+                                        <option value="manufacturer">Product Manufacturer</option>
+                                        <option value="microbusiness">Microbusiness / Craft Grower</option>
+                                        <option value="ancillary">Ancillary Business (Non-Cannabis Touching)</option>
+                                        <option value="rvtp">Responsible Vendor Training Program</option>
+                                        <option value="food">Food Vendor</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vendor-description">Brief Description of Your Products/Services *</label>
+                                <textarea id="vendor-description" name="vendor-description" required></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="vendor-booth">Booth Size Preference *</label>
+                                    <select id="vendor-booth" name="vendor-booth" required>
+                                        <option value="">-- Select Booth Size --</option>
+                                        <option value="table">Tabletop Display</option>
+                                        <option value="10x10">10' x 10' Booth</option>
+                                        <option value="10x20">10' x 20' Booth</option>
+                                        <option value="20x20">20' x 20' Booth</option>
+                                        <option value="custom">Custom Size (Please specify in notes)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vendor-days">Participation Days *</label>
+                                    <select id="vendor-days" name="vendor-days" required>
+                                        <option value="">-- Select Days --</option>
+                                        <option value="friday">Friday Only</option>
+                                        <option value="saturday">Saturday Only</option>
+                                        <option value="sunday">Sunday Only</option>
+                                        <option value="fri-sat">Friday & Saturday</option>
+                                        <option value="sat-sun">Saturday & Sunday</option>
+                                        <option value="all">All Three Days</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vendor-notes">Additional Information or Special Requirements</label>
+                                <textarea id="vendor-notes" name="vendor-notes"></textarea>
+                            </div>
+                            
+                            <div class="form-check">
+                                <label>
+                                    <input type="checkbox" name="vendor-terms" required>
+                                    I understand that this is an application only and does not guarantee vendor space at the event *
+                                </label>
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="btn primary-btn">Submit Application</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="sponsorship" class="contact-content">
+                <div class="contact-card">
+                    <div class="contact-card-header">
+                        <h3>Sponsorship Inquiry</h3>
+                        <p>Interested in sponsoring the Massachusetts Cannabis Expo 2025?</p>
+                    </div>
+                    <div class="contact-card-body">
+                        <div id="sponsor-message" class="form-message"></div>
+                        <form id="sponsor-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sponsor-name">Full Name *</label>
+                                    <input type="text" id="sponsor-name" name="sponsor-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sponsor-email">Email Address *</label>
+                                    <input type="email" id="sponsor-email" name="sponsor-email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sponsor-phone">Phone Number *</label>
+                                    <input type="tel" id="sponsor-phone" name="sponsor-phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sponsor-company">Company/Organization Name *</label>
+                                    <input type="text" id="sponsor-company" name="sponsor-company" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sponsor-website">Website</label>
+                                    <input type="url" id="sponsor-website" name="sponsor-website">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sponsor-level">Sponsorship Level of Interest *</label>
+                                    <select id="sponsor-level" name="sponsor-level" required>
+                                        <option value="">-- Select Sponsorship Level --</option>
+                                        <option value="premier">Premier Sponsor</option>
+                                        <option value="platinum">Platinum Sponsor</option>
+                                        <option value="gold">Gold Sponsor</option>
+                                        <option value="silver">Silver Sponsor</option>
+                                        <option value="bronze">Bronze Sponsor</option>
+                                        <option value="supporting">Supporting Sponsor</option>
+                                        <option value="custom">Custom Sponsorship</option>
+                                        <option value="unsure">Not Sure Yet</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sponsor-goals">Sponsorship Goals and Objectives *</label>
+                                <textarea id="sponsor-goals" name="sponsor-goals" required placeholder="Please describe what you hope to achieve through sponsorship (e.g., brand awareness, lead generation, product launch)"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sponsor-budget">Approximate Sponsorship Budget</label>
+                                <select id="sponsor-budget" name="sponsor-budget">
+                                    <option value="">-- Select Budget Range --</option>
+                                    <option value="under-5k">Under $5,000</option>
+                                    <option value="5k-10k">$5,000 - $10,000</option>
+                                    <option value="10k-15k">$10,000 - $15,000</option>
+                                    <option value="15k-25k">$15,000 - $25,000</option>
+                                    <option value="25k-plus">$25,000+</option>
+                                    <option value="tbd">To Be Determined</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sponsor-notes">Additional Information or Questions</label>
+                                <textarea id="sponsor-notes" name="sponsor-notes"></textarea>
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="btn primary-btn">Submit Inquiry</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="media" class="contact-content">
+                <div class="contact-card">
+                    <div class="contact-card-header">
+                        <h3>Media Inquiry</h3>
+                        <p>Interested in covering the Massachusetts Cannabis Expo 2025?</p>
+                    </div>
+                    <div class="contact-card-body">
+                        <div id="media-message" class="form-message"></div>
+                        <form id="media-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="media-name">Full Name *</label>
+                                    <input type="text" id="media-name" name="media-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="media-email">Email Address *</label>
+                                    <input type="email" id="media-email" name="media-email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="media-phone">Phone Number *</label>
+                                    <input type="tel" id="media-phone" name="media-phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="media-outlet">Media Outlet/Publication *</label>
+                                    <input type="text" id="media-outlet" name="media-outlet" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="media-coverage">Intended Coverage *</label>
+                                <textarea id="media-coverage" name="media-coverage" required placeholder="Please describe how you plan to cover the event (e.g., article, interview, photography, video)"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="media-interview">Interview Requests (if any)</label>
+                                <textarea id="media-interview" name="media-interview" placeholder="List any specific individuals you would like to interview during the event"></textarea>
+                            </div>
+                            
+                            <div class="form-check">
+                                <label>
+                                    <input type="checkbox" name="media-press" required>
+                                    I understand that media access is subject to approval and that I will be required to provide proper press credentials *
+                                </label>
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="btn primary-btn">Submit Media Request</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="organizers-section">
+        <div class="container">
+            <h2>Meet the Organizers</h2>
+            <div class="organizers-grid">
+                <!-- Organizers will be loaded dynamically via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2>Event Location</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2955.0144348225785!2d-72.60709138796696!3d42.2001327471396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e6e6d4d9cc5653%3A0xc1099028da84a8e!2s4%20Open%20Square%20Way%2C%20Holyoke%2C%20MA%2001040!5e0!3m2!1sen!2sus!4v1647251532178!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+            <div class="location-details">
+                <h3>Massachusetts Cannabis Expo</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 4 Open Square Way, Holyoke, MA 01040</p>
+                <p><i class="fas fa-calendar-alt"></i> May 16-18, 2025</p>
+                <a href="https://maps.google.com/maps?q=4+Open+Square+Way,+Holyoke,+MA+01040" target="_blank" class="btn map-btn">Get Directions</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="countdown-section">
+        <div class="container">
+            <div class="countdown-container">
+                <h2 class="countdown-title">Countdown to Massachusetts Cannabis Expo 2025</h2>
+                <div id="countdown" class="countdown-timer">
+                    <!-- Countdown timer will be inserted here via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Massachusetts Cannabis Expo Logo">
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="meet-the-plug.html">Meet the Plug</a></li>
+                        <li><a href="job-fair.html">Job Fair</a></li>
+                        <li><a href="commissioners.html">Commissioners</a></li>
+                        <li><a href="battle-of-budtenders.html">Battle of the Budtenders</a></li>
+			<li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:masscannabisexpo@gmail.com">masscannabisexpo@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> 4 Open Square Way, Holyoke, MA 01040</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Massachusetts Cannabis Expo. All Rights Reserved. Must be 21+ to attend.</p>
+                <p>Organized by CannaGroup 180 LLC</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Organizer data
+        const organizers = [
+            {
+                id: "heather-wood",
+                name: "Heather Wood",
+                role: "President, CannaGroup 180 LLC",
+                bio: "<ul class=\"organizer-bio\">" +
+                     "<li>Graduated from Mount Holyoke College cum laude</li>" +
+                     "<li>United Way Executive Board Member</li>" +
+                     "<li>Current Executive Director of Heart Wing Center</li>" +
+                     "<li>Cannabis Cultivator</li>" +
+                     "<li>Legacy cannabis event promoter</li>" +
+                     "<li>CannaGroup 180 Co-founder and President</li>" +
+                     "<li>Peace Love and Good Bud co-founder</li>" +
+                     "<li>Member of the Social Equity Program</li>" +
+                     "</ul>",
+                email: "minoritycannabisgrowers@gmail.com",
+                slug: "heather-wood"
+            },
+            {
+                id: "vashon-shaw",
+                name: "Vashon Shaw",
+                role: "Vice President, CannaGroup 180 LLC",
+                bio: "<ul class=\"organizer-bio\">" +
+                     "<li>Certified Credit Counselor</li>" +
+                     "<li>Attended Cannabis Training University</li>" +
+                     "<li>Attended Cannabis Tax & Accounting Academy</li>" +
+                     "<li>Middlesex Community College Cannabis101</li>" +
+                     "<li>Chief Business Strategist for Kemetic Credit Group</li>" +
+                     "<li>Cannabis mid-size cultivator 18 years' experience</li>" +
+                     "<li>Published two books</li>" +
+                     "<li>Foreclosure Recovery Asset Specialist</li>" +
+                     "<li>Peace Love and Good Bud Co-Founder and President</li>" +
+                     "<li>CannaGroup 180 Co-Founder and Vice President</li>" +
+                     "<li>Member of the Social Equity Program</li>" +
+                     "<li>Founded the Legacy to Legitimacy Program</li>" +
+                     "</ul>",
+                email: "minoritycannabisgrowers@gmail.com",
+                slug: "vashon-shaw"
+            },
+            {
+                id: "nicole-coakley",
+                name: "Nicole Coakley",
+                role: "Host & Coordinator",
+                bio: "<p class=\"organizer-bio\">Nicole Coakley is a key coordinator for the Massachusetts Cannabis Expo, bringing her expertise and passion for the cannabis industry to ensure a successful event.</p>",
+                email: "ncoakleyconsulting@gmail.com",
+                slug: "nicole-coakley"
+            }
+        ];
+
+        // Function to generate organizer cards
+        function generateOrganizerCards() {
+            const gridContainer = document.querySelector('.organizers-grid');
+            
+            // Clear existing content
+            gridContainer.innerHTML = '';
+            
+            organizers.forEach(organizer => {
+                // Create card HTML
+                const card = document.createElement('div');
+                card.className = 'organizer-card';
+                
+                // Image container with image loading logic
+                const imageContainer = document.createElement('div');
+                imageContainer.className = 'organizer-image';
+                
+                const img = document.createElement('img');
+                img.src = `images/${organizer.slug}.jpg`;
+                img.alt = `${organizer.name}, ${organizer.role}`;
+                img.onerror = function() {
+                    // If image fails to load, show placeholder instead
+                    this.style.display = 'none';
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'placeholder';
+                    placeholder.innerHTML = '<i class="fas fa-user"></i>';
+                    imageContainer.appendChild(placeholder);
+                };
+                imageContainer.appendChild(img);
+                
+                // Content container
+                const contentContainer = document.createElement('div');
+                contentContainer.className = 'organizer-content';
+                
+                // Name, role, bio, contact button
+                contentContainer.innerHTML = `
+                    <h3>${organizer.name}</h3>
+                    <div class="organizer-role">${organizer.role}</div>
+                    ${organizer.bio}
+                    <a href="mailto:${organizer.email}" class="btn secondary-btn"><i class="fas fa-envelope"></i> Contact</a>
+                `;
+                
+                // Append all parts to the card
+                card.appendChild(imageContainer);
+                card.appendChild(contentContainer);
+                
+                // Add the card to the grid
+                gridContainer.appendChild(card);
+            });
+        }
+
+        // FormSubmit.co integration
+        document.addEventListener('DOMContentLoaded', function() {
+            // FormSubmit access string
+            const formSubmitString = '268833727b2ffd588e3a16f804280af2';
+            
+            // Configuration for each form
+            const formConfig = {
+                'contact-form': {
+                    subject: 'New General Inquiry',
+                    redirect: window.location.href + '?submitted=general'
+                },
+                'register-form': {
+                    subject: 'New Event Registration',
+                    redirect: window.location.href + '?submitted=registration'
+                },
+                'vendor-form': {
+                    subject: 'New Vendor Application',
+                    redirect: window.location.href + '?submitted=vendor'
+                },
+                'sponsor-form': {
+                    subject: 'New Sponsorship Inquiry',
+                    redirect: window.location.href + '?submitted=sponsor'
+                },
+                'media-form': {
+                    subject: 'New Media Inquiry',
+                    redirect: window.location.href + '?submitted=media'
+                }
+            };
+
+            // Process all forms
+            Object.keys(formConfig).forEach(formId => {
+                const form = document.getElementById(formId);
+                if (!form) return;
+                
+                // Set the form action to FormSubmit.co with the string
+                form.setAttribute('action', `https://formsubmit.co/${formSubmitString}`);
+                form.setAttribute('method', 'POST');
+                
+                // Add hidden configuration fields
+                const hiddenFields = [
+                    { name: '_subject', value: formConfig[formId].subject },
+                    { name: '_next', value: formConfig[formId].redirect },
+                    { name: '_captcha', value: 'false' } // Optional: disable captcha
+                ];
+                
+                hiddenFields.forEach(field => {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = field.name;
+                    input.value = field.value;
+                    form.appendChild(input);
+                });
+                
+                // Remove any existing event listeners that would prevent form submission
+                const newForm = form.cloneNode(true);
+                form.parentNode.replaceChild(newForm, form);
+            });
+            
+            // Handle URL parameters to show success messages
+            const urlParams = new URLSearchParams(window.location.search);
+            const submitted = urlParams.get('submitted');
+            
+            if (submitted) {
+                const messageIds = {
+                    'general': 'form-message',
+                    'registration': 'register-message',
+                    'vendor': 'vendor-message',
+                    'sponsor': 'sponsor-message',
+                    'media': 'media-message'
+                };
+                
+                const messageId = messageIds[submitted];
+                if (messageId) {
+                    const messageElement = document.getElementById(messageId);
+                    if (messageElement) {
+                        messageElement.textContent = 'Thank you for your submission! We will be in touch shortly.';
+                        messageElement.className = 'form-message success';
+                        messageElement.style.display = 'block';
+                        
+                        // Activate the correct tab
+                        const tabButton = document.querySelector(`.contact-tab[data-tab="${submitted === 'general' ? 'general' : submitted}"]`);
+                        if (tabButton) {
+                            tabButton.click();
+                        }
+                    }
+                }
+            }
+            
+            // Generate organizer cards
+            generateOrganizerCards();
+            
+            // Set up tab navigation
+            const tabButtons = document.querySelectorAll('.contact-tab');
+            const tabContents = document.querySelectorAll('.contact-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons and tabs
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to current button and corresponding tab
+                    this.classList.add('active');
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

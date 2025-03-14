@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the Western Massachusetts Cannabis Control Commissioners at the Massachusetts Cannabis Expo 2025. Hear from the state's top cannabis regulators about industry policies and future direction.">
+    <meta name="keywords" content="cannabis commissioners, massachusetts cannabis control commission, cannabis regulation, cannabis policy, cannabis industry leaders">
+    <title>Meet the Commissioners | Western Massachusetts Cannabis Expo 2025</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Commissioners Page Specific Styles */
+        .page-banner {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/commissioners-banner.jpg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+        
+        .page-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .page-banner p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .intro-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .commissioner-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .commissioners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .commissioner-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .commissioner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .commissioner-image {
+            width: 100%;
+            height: 300px;
+            background-color: #e9ecef;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .commissioner-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 0.3s ease;
+        }
+        
+        .commissioner-card:hover .commissioner-image img {
+            transform: scale(1.05);
+        }
+        
+        .commissioner-image .placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            color: var(--grey-color);
+        }
+        
+        .commissioner-image .placeholder i {
+            font-size: 3rem;
+        }
+        
+        .commissioner-content {
+            padding: 25px;
+        }
+        
+        .commissioner-content h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .commissioner-role {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .commissioner-bio {
+            color: var(--grey-color);
+            margin-bottom: 20px;
+        }
+        
+        .commissioner-focus {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .event-tabs {
+            margin-top: 30px;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #e9ecef;
+            margin-bottom: 30px;
+        }
+        
+        .tab-button {
+            padding: 15px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--grey-color);
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+        
+        .tab-button.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .event-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 40px;
+        }
+        
+        .event-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .event-title h3 {
+            margin-bottom: 5px;
+        }
+        
+        .event-time {
+            font-size: 0.9rem;
+        }
+        
+        .event-price {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .event-body {
+            padding: 30px;
+        }
+        
+        .event-description {
+            margin-bottom: 20px;
+        }
+        
+        .event-cta {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .vip-benefits {
+            margin-top: 20px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-icon {
+            color: var(--success-color);
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .benefit-text {
+            flex: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .page-banner h1 {
+                font-size: 2.5rem;
+            }
+            
+            .commissioners-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .commissioner-image {
+                height: 250px;
+            }
+            
+            .tab-buttons {
+                flex-wrap: wrap;
+            }
+            
+            .tab-button {
+                padding: 10px 15px;
+                flex: 1;
+                text-align: center;
+            }
+            
+            .event-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .event-price {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="Western Massachusetts Cannabis Expo Logo"></a>
+            </div>
+            <nav id="main-nav">
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="meet-the-plug.html">Meet the Plug</a></li>
+                    <li><a href="job-fair.html">Job Fair</a></li>
+                    <li><a href="commissioners.html">Commissioners</a></li>
+                    <li><a href="battle-of-budtenders.html">Battle of the Budtenders</a></li>
+                    <li><a href="sponsors.html">Sponsors</a></li>
+                    <li><a href="food.html">Food & Catering</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>Meet the Commissioners</h1>
+            <p>The State of the Western Massachusetts Cannabis Industry Address</p>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <h2>The Cannabis Industry's State of the Union</h2>
+                <p>Every year, the President of United States delivers the State of the Union address, providing a comprehensive update on the nation's progress, challenges, and future direction. Similarly, at the Western Mass Cannabis Expo 2025, "Meet the Commissioners State Of the Industry Address" and "Meet the Commissioners' Panel" session serves as the state of Western Massachusetts Cannabis Industry Address - the single most important update for cannabis businesses, advocates and consumers.</p>
+                <p>This is not just another panel. This is where policy meets practice, where the state's top cannabis regulators provide critical insights on the present and future of the industry. Just as the President addresses Congress and the American people, the Mass Cannabis Control Commission will directly address western Massachusetts entrepreneurs, cultivators, dispensary owners, investors and community members who drive this booming industry.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="commissioner-section">
+        <div class="container">
+            <h2>Commissioners' Profiles</h2>
+            <div class="commissioners-grid" id="commissioners-grid">
+                <!-- Commissioners will be loaded dynamically via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section class="commissioners-events" id="events">
+        <div class="container">
+            <h2>Commissioner Events at the Expo</h2>
+            <div class="event-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="vip-lounge">VIP Network Lounge</button>
+                    <button class="tab-button" data-tab="b2b-lunch">B2B Lunch</button>
+                    <button class="tab-button" data-tab="state-address">State of the Industry</button>
+                    <button class="tab-button" data-tab="panel">Commissioner Panel</button>
+                </div>
+                
+                <div id="vip-lounge" class="tab-content active">
+                    <div class="event-card">
+                        <div class="event-header">
+                            <div class="event-title">
+                                <h3>MCE VIP NETWORK LOUNGE</h3>
+                                <div class="event-time">Saturday, May 17 | 11:00 AM - 12:00 PM</div>
+                            </div>
+                            <div class="event-price">Contact for Price</div>
+                        </div>
+                        <div class="event-body">
+                            <div class="event-description">
+                                <p>Before the "Meet the Commissioners" session, selected attendees will have the rare opportunity to participate in a private, closed-door roundtable discussion with Massachusetts Cannabis Control Commissioners, state legislators, top industry executives, and key stakeholders. This exclusive event is designed to go beyond the public Q&A, offering a high-level, unfiltered dialogue about the future of the Western Massachusetts cannabis market.</p>
+                                
+                                <div class="vip-benefits">
+                                    <h4>VIP Experience Includes:</h4>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                                        <div class="benefit-text">Direct access to all Commissioners in an intimate setting</div>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                                        <div class="benefit-text">Photo opportunities with key leaders of the western Mass community</div>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                                        <div class="benefit-text">Networking with industry decision-makers and government officials</div>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                                        <div class="benefit-text">Opportunity to raise specific concerns directly with regulators</div>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                                        <div class="benefit-text">Priority seating at all commissioner events</div>
+                                    </div>
+                                </div>
+                                
+                                <p><strong>Note:</strong> Space is extremely limited for this exclusive event. Early registration is strongly recommended to secure your place.</p>
+                            </div>
+                            <div class="event-cta">
+                                <a href="contact.html#vip-lounge" class="btn primary-btn">Inquire About VIP Access</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="b2b-lunch" class="tab-content">
+                    <div class="event-card">
+                        <div class="event-header">
+                            <div class="event-title">
+                                <h3>MCE B2B Lunch</h3>
+                                <div class="event-time">Saturday, May 17 | 12:30 PM - 1:30 PM</div>
+                            </div>
+                            <div class="event-price">$50</div>
+                        </div>
+                        <div class="event-body">
+                            <div class="event-description">
+                                <p>Join us for a networking lunch catered by Mi-Cultra 2 cafe and Jazzy Wings. This is an excellent opportunity to meet fellow cannabis industry professionals in a relaxed setting while enjoying delicious food.</p>
+                                
+                                <h4>Business Spotlight:</h4>
+                                <p>Attendees have the option of introducing themselves and their business for one minute when their name is drawn from our business lottery. This is your chance to showcase your business to the entire room of industry professionals!</p>
+                                
+                                <h4>Notable Attendees:</h4>
+                                <p>The lunch will be attended by commissioners, speakers, and other VIP guests from the expo, giving you valuable networking opportunities with key industry figures.</p>
+                                
+                                <a href="food.html" class="btn secondary-btn">View Menu</a>
+                            </div>
+                            <div class="event-cta">
+                                <a href="contact.html#b2b-lunch" class="btn primary-btn">Reserve Your Seat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="state-address" class="tab-content">
+                    <div class="event-card">
+                        <div class="event-header">
+                            <div class="event-title">
+                                <h3>Commissioners State of the Industry Address</h3>
+                                <div class="event-time">Saturday, May 17 | 2:45 PM - 3:45 PM</div>
+                            </div>
+                            <div class="event-price">$25</div>
+                        </div>
+                        <div class="event-body">
+                            <div class="event-description">
+                                <p>The Commissioners State of the Industry Address will be an annual platform where each Commissioner has 10 minutes to speak to attendees about the current state of the Western Massachusetts cannabis industry and its future. They will address general industry concerns, speak on new and old programs, and their individual projects. There will be no questions for this segment.</p>
+                                
+                                <h4>Topics Will Include:</h4>
+                                <ul>
+                                    <li>Current regulatory landscape and upcoming changes</li>
+                                    <li>Social equity initiatives and progress</li>
+                                    <li>Market trends and growth projections</li>
+                                    <li>Challenges facing the industry and proposed solutions</li>
+                                    <li>Commissioners' individual areas of focus</li>
+                                </ul>
+                                
+                                <p><strong>Note:</strong> All money raised during this segment will be donated to the Social Equity Program.</p>
+                            </div>
+                            <div class="event-cta">
+                                <a href="contact.html#state-address" class="btn primary-btn">Purchase Tickets</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="panel" class="tab-content">
+                    <div class="event-card">
+                        <div class="event-header">
+                            <div class="event-title">
+                                <h3>Meet the Commissioner Panel</h3>
+                                <div class="event-time">Saturday, May 17 | 3:55 PM - 5:55 PM</div>
+                            </div>
+                            <div class="event-price">Included with Address Ticket</div>
+                        </div>
+                        <div class="event-body">
+                            <div class="event-description">
+                                <p>Following the State of the Industry Address, attendees will have the opportunity to engage directly with the Commissioners in a question-and-answer format. This is a unique chance to hear directly from regulators on issues that matter most to you and your business.</p>
+                                
+                                <h4>How It Works:</h4>
+                                <p>Attendees will text their questions to the host, who consolidates them and directs the questions to the commissioners. This format ensures a wide range of questions can be addressed efficiently, providing maximum value to all participants.</p>
+                                
+                                <h4>Topics Open for Discussion:</h4>
+                                <ul>
+                                    <li>Licensing processes and challenges</li>
+                                    <li>Compliance requirements and best practices</li>
+                                    <li>Host community agreements</li>
+                                    <li>Social consumption developments</li>
+                                    <li>Social equity program advancements</li>
+                                    <li>Market expansion and opportunities</li>
+                                </ul>
+                                
+                                <p><strong>Note:</strong> The panel discussion is included with your State of the Industry Address ticket. No additional purchase is necessary.</p>
+                            </div>
+                            <div class="event-cta">
+                                <a href="contact.html#state-address" class="btn primary-btn">Purchase Tickets</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Don't Miss This Unprecedented Opportunity</h2>
+            <p>Join us for an exclusive chance to hear directly from the commissioners shaping the future of the Western Massachusetts cannabis industry.</p>
+            <div class="cta-buttons">
+                <a href="contact.html#state-address" class="btn primary-btn large-btn">Purchase Tickets</a>
+                <a href="contact.html#vip-lounge" class="btn secondary-btn large-btn">Inquire About VIP Access</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Western Massachusetts Cannabis Expo Logo">
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="meet-the-plug.html">Meet the Plug</a></li>
+                        <li><a href="job-fair.html">Job Fair</a></li>
+                        <li><a href="commissioners.html">Commissioners</a></li>
+                        <li><a href="battle-of-budtenders.html">Battle of the Budtenders</a></li>
+                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:masscannabisexpo@gmail.com">masscannabisexpo@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> 4 Open Square Way, Holyoke, MA 01040</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Western Massachusetts Cannabis Expo. All Rights Reserved. Must be 21+ to attend.</p>
+                <p>Organized by CannaGroup 180 LLC</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Commissioner data
+        const commissioners = [
+            {
+                id: "bruce-stebbins",
+                name: "Bruce Stebbins",
+                role: "Acting Chair and Commissioner",
+                bio: "Appointed as Acting Chair by State Treasurer Deborah B. Goldberg, Bruce Stebbins brings a wealth of experience from his tenure with the Massachusetts Gaming Commission. His leadership is pivotal during this transformative period for the state's cannabis industry.",
+                focus: "Focus at the Expo: Regulatory developments, enforcement strategies, and the Commission's vision for a safe and equitable cannabis market.",
+                slug: "bruce-stebbins"
+            },
+            {
+                id: "nurys-camargo",
+                name: "Nurys Camargo",
+                role: "Commissioner",
+                bio: "With a background in public safety, Commissioner Camargo offers valuable insights into community relations and public health initiatives within the cannabis sector. Her focus includes ensuring that cannabis policies protect communities while promoting industry growth.",
+                focus: "Focus at the Expo: Social consumption policies and community engagement strategies.",
+                slug: "nurys-camargo"
+            },
+            {
+                id: "ava-concepcion",
+                name: "Ava Callender Concepcion",
+                role: "Commissioner",
+                bio: "Commissioner Concepcion's expertise lies in legal and policy matters related to regulated industries. She plays a crucial role in shaping suitability standards and ensuring that the industry's growth aligns with legal frameworks and social justice considerations.",
+                focus: "Focus at the Expo: Policy reforms and their impact on industry stakeholders.",
+                slug: "ava-concepcion"
+            },
+            {
+                id: "kimberly-roy",
+                name: "Kimberly Roy",
+                role: "Commissioner",
+                bio: "Appointed for her background in public health, mental health, substance use, or toxicology, Commissioner Roy brings a comprehensive understanding of the health implications associated with cannabis use. Her contributions are vital in developing policies that safeguard public health while supporting industry innovation.",
+                focus: "Focus at the Expo: Host Community Agreements and their role in local economic development.",
+                slug: "kimberly-roy"
+            },
+            {
+                id: "travis-ahern",
+                name: "Travis Ahern",
+                role: "Executive Director",
+                bio: "As the Executive Director, Travis Ahern oversees the Commission's operations and strategic initiatives. His leadership ensures that the Commission's goals align with industry needs and public interests.",
+                focus: "Focus at the Expo: The Commission's future direction and ongoing projects aimed at industry advancement.",
+                slug: "travis-ahern"
+            }
+        ];
+
+        // Function to generate commissioner cards
+        function generateCommissionerCards() {
+            const gridContainer = document.getElementById('commissioners-grid');
+            
+            commissioners.forEach(commissioner => {
+                // Create card HTML
+                const card = document.createElement('div');
+                card.className = 'commissioner-card';
+                
+                // Image container with image loading logic
+                const imageContainer = document.createElement('div');
+                imageContainer.className = 'commissioner-image';
+                
+                const img = document.createElement('img');
+                img.src = `images/${commissioner.slug}.jpg`;
+                img.alt = `${commissioner.name}, ${commissioner.role}`;
+                img.onerror = function() {
+                    // If image fails to load, show placeholder instead
+                    this.style.display = 'none';
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'placeholder';
+                    placeholder.innerHTML = '<i class="fas fa-user"></i>';
+                    imageContainer.appendChild(placeholder);
+                };
+                imageContainer.appendChild(img);
+                
+                // Content container
+                const contentContainer = document.createElement('div');
+                contentContainer.className = 'commissioner-content';
+                
+                // Name, role, bio, focus
+                contentContainer.innerHTML = `
+                    <h3>${commissioner.name}</h3>
+                    <div class="commissioner-role">${commissioner.role}</div>
+                    <p class="commissioner-bio">${commissioner.bio}</p>
+                    <p class="commissioner-focus">${commissioner.focus}</p>
+                `;
+                
+                // Append all parts to the card
+                card.appendChild(imageContainer);
+                card.appendChild(contentContainer);
+                
+                // Add the card to the grid
+                gridContainer.appendChild(card);
+            });
+        }
+
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generate commissioner cards
+            generateCommissionerCards();
+            
+            // Set up tab navigation
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons and tabs
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to current button and corresponding tab
+                    this.classList.add('active');
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Image error handling for all commissioner images
+            document.querySelectorAll('.commissioner-image img').forEach(img => {
+                img.addEventListener('error', function() {
+                    console.log(`Failed to load image: ${this.src}`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

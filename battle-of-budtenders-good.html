@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle of the Budtenders | Mass Cannabis Expo</title>
+    <style>
+        :root {
+            --primary: #00b050;
+            --primary-dark: #008f41;
+            --secondary: #7030a0;
+            --accent: #ffc000;
+            --dark: #333333;
+            --light: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50 L0 100 L100 100 Z' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .host-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .host-image {
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+            display: block;
+        }
+        
+        .host-info {
+            max-width: 500px;
+        }
+        
+        .trophy-icon {
+            color: var(--accent);
+            font-size: 2rem;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+        
+        .event-details {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Updated Competition Format section to match Image 1 */
+        .competition-format {
+            background-color: #7030a0; /* Purple background from Image 1 */
+            color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .competition-format h2 {
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .competition-format h2 i {
+            margin-right: 15px;
+        }
+
+        .competition-format p {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .competition-format p strong {
+            font-weight: 700;
+        }
+        
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .format-item {
+            background-color: rgba(112, 48, 160, 0.8); /* Slightly lighter purple */
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .format-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .format-item h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .format-item h3 i {
+            margin-right: 10px;
+        }
+        
+        .format-item p {
+            color: white;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        /* Updated Grand Prize section to match Image 2 */
+        .prize-section {
+            text-align: center;
+            padding: 60px 0;
+            background: #ffc000; /* Bright yellow/gold from Image 2 */
+            color: white;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .prize-section h2 {
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .prize-section h2 i {
+            margin-right: 15px;
+        }
+        
+        .prize-amount {
+            font-size: 5rem;
+            font-weight: 800;
+            display: block;
+            margin: 25px 0;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .prize-section p {
+            color: white;
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin: 15px 0;
+        }
+        
+        .championship-belt {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #4d8000; /* Green-gold color */
+            margin: 20px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .package {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .package::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+        }
+        
+        .package.bronze::before {
+            background-color: #cd7f32;
+        }
+        
+        .package.silver::before {
+            background-color: #c0c0c0;
+        }
+        
+        .package.gold::before {
+            background-color: #ffd700;
+        }
+        
+        .package.platinum::before {
+            background: linear-gradient(90deg, #ffd700, #ffffff, #ffd700);
+        }
+        
+        .package:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .package h3 {
+            color: var(--primary);
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--dark);
+            margin: 20px 0;
+        }
+        
+        .package-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .package-features li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .package-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .cta {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        
+        .cta:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .cta-large {
+            font-size: 1.3rem;
+            padding: 20px 40px;
+        }
+        
+        /* Updated Why Compete section to match Image 3 with purple theme */
+        .why-compete-section {
+            background-color: #f5f5f5;
+            padding: 60px 0;
+            margin: 40px 0;
+            border-radius: 15px;
+        }
+
+        .why-compete-section h2 {
+            text-align: center;
+            color: #333333;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .reason-item {
+            background-color: #7030a0; /* Same purple as competition format */
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .reason-item h3 {
+            color: #ffc000; /* Yellow/gold color */
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .reason-item h3 i {
+            margin-right: 10px;
+        }
+
+        .reason-item p {
+            color: white;
+            font-size: 1rem;
+        }
+
+        .signup-form {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .limited-spots {
+            display: inline-block;
+            background-color: #ff4500;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        /* NEW FREE ENTRY BUTTON STYLES */
+        .free-entry-btn {
+            display: inline-block;
+            background-color: #FF6B00;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .free-entry-btn:hover {
+            background-color: #FF5100;
+            transform: scale(1.05);
+        }
+        
+        .free-entry-btn i {
+            margin-right: 8px;
+        }
+        
+        .medal {
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+
+        /* Navigation styles */
+        .header-container {
+            background-color: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            margin-right: 20px;
+        }
+        
+        .logo img {
+            height: 60px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links li {
+            margin: 0 15px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .footer-links li {
+            margin: 0 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .prize-amount {
+                font-size: 3.5rem;
+            }
+            
+            .championship-belt {
+                font-size: 1.8rem;
+            }
+            
+            .event-details,
+            .competition-format,
+            .signup-form {
+                padding: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+            }
+            
+            .nav-links li {
+                margin: 5px 10px;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation bar with logo -->
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="Massachusetts Cannabis Expo Logo"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="meet-the-plug.html">Meet the Plug</a></li>
+                <li><a href="job-fair.html">Job Fair</a></li>
+                <li><a href="commissioners.html">Commissioners</a></li>
+                <li><a href="battle-of-budtenders.html">Battle of the Budtenders</a></li>
+                <li><a href="sponsors.html">Sponsors</a></li>
+                <li><a href="food.html">Food & Catering</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <header>
+        <div class="container">
+            <div class="hero">
+                <h1><i class="fas fa-trophy trophy-icon"></i> BATTLE OF THE BUDTENDERS <i class="fas fa-trophy trophy-icon"></i></h1>
+                <p class="subtitle">The Ultimate Budtender Showdown — Who Will Be Crowned Champion?</p>
+                
+                <div class="host-section">
+                    <img src="thunder-walker.jpg" alt="Thunder Walker" class="host-image">
+                    <div class="host-info">
+                        <h2>Hosted by Thunder Walker</h2>
+                        <p>Industry insider with years of experience in cannabis business and culture. This competition will be an electrifying experience from start to finish!</p>
+                    </div>
+                </div>
+                
+                <a href="#signup" class="cta pulse">REGISTER YOUR TEAM NOW</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="event-details">
+            <h2><i class="fas fa-map-marker-alt"></i> Event Details</h2>
+            <p><strong>Location:</strong> Mass Cannabis Expo, 4 Open Square Way, Holyoke, MA 01040</p>
+            <p><strong>Date:</strong> Friday, May 16, 2025 | 7:30 PM</p>
+            <p><strong>Entry Fee:</strong> $50 per Budtender</p>
+            <a href="survey.html" class="free-entry-btn"><i class="fas fa-clipboard-check"></i> OR COMPLETE A SURVEY TO ENTER FREE</a>
+            
+            <div class="limited-spots">
+                <i class="fas fa-exclamation-circle"></i> LIMITED SPOTS AVAILABLE!
+            </div>
+        </div>
+        
+        <!-- Competition Format Section styled like Image 1 -->
+        <div class="competition-format">
+            <h2><i class="fas fa-fire"></i> Competition Format</h2>
+            <p>Think your team has what it takes to be <strong>the best of the best</strong>? Show off your cannabis expertise in our high-energy competition!</p>
+            
+            <div class="format-grid">
+                <div class="format-item">
+                    <h3><i class="fas fa-brain"></i> Cannabis Knowledge Trivia</h3>
+                    <p>Put your product knowledge to the test with challenging questions about strains, terpenes, cannabinoids, and industry facts.</p>
+                </div>
+                
+                <div class="format-item">
+                    <h3><i class="fas fa-leaf"></i> Product Recommendations</h3>
+                    <p>Showcase your ability to pair customers with the perfect strain based on their needs, preferences, and desired effects.</p>
+                </div>
+                
+                <div class="format-item">
+                    <h3><i class="fas fa-balance-scale"></i> Compliance Scenarios</h3>
+                    <p>Navigate real-world dispensary challenges and demonstrate your knowledge of regulations and best practices.</p>
+                </div>
+                
+                <div class="format-item">
+                    <h3><i class="fas fa-comments"></i> Customer Interactions</h3>
+                    <p>Handle tough customer questions like a pro in simulated scenarios judged by industry professionals.</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 30px;">The competition follows an elimination-style format until we crown the ultimate Budtender Champion!</p>
+        </div>
+        
+        <!-- Grand Prize Section styled like Image 2 -->
+        <div class="prize-section">
+            <h2><i class="fas fa-award"></i> GRAND PRIZE</h2>
+            <span class="prize-amount">$2,500</span>
+            <p>CASH AWARD</p>
+            <p class="championship-belt">+ THE BUD MASTER CHAMPIONSHIP BELT</p>
+        </div>
+        
+        <h2 style="text-align: center; margin: 60px 0 30px;">Sponsorship & Team Packages</h2>
+        
+        <div class="packages">
+            <div class="package bronze">
+                <span class="medal">🥉</span>
+                <h3>Budtender Competitor Package</h3>
+                <div class="package-price">$500</div>
+                <p>For companies that want to enter the competition and get basic brand exposure.</p>
+                <ul class="package-features">
+                    <li>Entry for Up to 3 Budtenders</li>
+                    <li>1 Power Lunch Ticket</li>
+                    <li>Company Listing in Event Directory</li>
+                    <li>Priority Booth Placement Upgrade</li>
+                </ul>
+                <a href="#signup" class="cta">Select Package</a>
+            </div>
+            
+            <div class="package silver">
+                <span class="medal">🥈</span>
+                <h3>Team Sponsorship Package</h3>
+                <div class="package-price">$1,000</div>
+                <p>A premium package for brands that want more exposure at the event.</p>
+                <ul class="package-features">
+                    <li>Entry for Up to 5 Budtenders</li>
+                    <li>5 Power Lunch Tickets</li>
+                    <li>10 x 10 Booth Space</li>
+                    <li>Company Logo on Primary Event Banner</li>
+                    <li>Social Media & Website Recognition</li>
+                </ul>
+                <a href="#signup" class="cta">Select Package</a>
+            </div>
+            
+            <div class="package gold">
+                <span class="medal">🥇</span>
+                <h3>Championship Sponsor</h3>
+                <div class="package-price">$2,500</div>
+                <p>For companies that want maximum brand exposure & VIP perks.</p>
+                <ul class="package-features">
+                    <li>Entry for Up to 8 Budtenders</li>
+                    <li>8 Power Lunch Tickets</li>
+                    <li>15 x 15 Activation zone</li>
+                    <li>Premium Logo Placement on Event Signage</li>
+                    <li>VIP Branding on Digital & Social Promotions</li>
+                    <li>8 tickets to the meet the Commissioners segment</li>
+                    <li>Company Shoutout on Event Stage</li>
+                </ul>
+                <a href="#signup" class="cta">Select Package</a>
+            </div>
+            
+            <div class="package platinum">
+                <span class="medal">👑</span>
+                <h3>Presenting Sponsor</h3>
+                <div class="package-price">$5,000</div>
+                <p>Be the official sponsor of one of the Mass Cannabis Expo's most exciting competitions!</p>
+                <ul class="package-features">
+                    <li>Presenting Sponsorship Title</li>
+                    <li>Entry for Up to 10 Budtenders</li>
+                    <li>10 Power Lunch Tickets</li>
+                    <li>20 x 20 lounge area and a 10 x 10 Activation space in a high traffic zone.</li>
+                    <li>Access Pass to all panel segments</li>
+		    <li>Premium Logo on Championship Belt & Award Check</li>
+                    <li>Speaking Opportunity at the Event</li>
+                    <li>Brand Highlight in All Marketing Materials</li>
+                    <li>Exclusive VIP Lounge Access</li>
+                    <li>Custom Branded Giveaway Option</li>
+                </ul>
+                <a href="#signup" class="cta">Select Package</a>
+            </div>
+        </div>
+        
+        <!-- Why Compete Section styled like Image 3 with purple theme -->
+        <div class="why-compete-section">
+            <h2>Why Compete in the Battle of the Budtenders?</h2>
+            <div class="reasons-grid">
+                <div class="reason-item">
+                    <h3><i class="fas fa-bullhorn"></i> Brand Recognition</h3>
+                    <p>Get your dispensary or brand in front of thousands of attendees at the Mass Cannabis Expo.</p>
+                </div>
+                
+                <div class="reason-item">
+                    <h3><i class="fas fa-crown"></i> Industry Leadership</h3>
+                    <p>Showcase your team's expertise and dominance in the competitive cannabis market.</p>
+                </div>
+                
+                <div class="reason-item">
+                    <h3><i class="fas fa-handshake"></i> Unmatched Networking</h3>
+                    <p>Connect with dispensary owners, cultivators, investors, and top cannabis professionals.</p>
+                </div>
+                
+                <div class="reason-item">
+                    <h3><i class="fas fa-users"></i> Celebrate Your Team</h3>
+                    <p>Reward your best budtenders with an unforgettable competition experience they'll love.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <a href="#signup" class="cta cta-large pulse">SECURE YOUR SPOT TODAY!</a>
+        </div>
+        
+        <div class="signup-form" id="signup">
+            <h2>Quick Registration Form</h2>
+            <p>Fill out this form to register for the Battle of the Budtenders!</p>
+            
+            <form id="registrationForm" action="mailto:info@masscannabisexpo.com" method="post" enctype="text/plain">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="companyName">Company/Dispensary Name *</label>
+                        <input type="text" id="companyName" name="companyName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactName">Contact Name *</label>
+                        <input type="text" id="contactName" name="contactName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="package">Select Package *</label>
+                    <select id="package" name="package" required>
+                        <option value="">-- Select a Package --</option>
+                        <option value="tier1">Tier 1 - Budtender Competitor Package ($500)</option>
+                        <option value="tier2">Tier 2 - Team Sponsorship Package ($1,000)</option>
+                        <option value="tier3">Tier 3 - Championship Sponsor ($2,500)</option>
+                        <option value="tier4">Tier 4 - Presenting Sponsor ($5,000)</option>
+                        <option value="individual">Individual Budtender Entry ($50)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="numBudtenders">Number of Budtenders Competing</label>
+                    <input type="number" id="numBudtenders" name="numBudtenders" min="1" max="10">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Additional Comments or Questions</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                
+                <button type="submit" class="cta cta-large">SUBMIT REGISTRATION</button>
+            </form>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="meet-the-plug.html">Meet the Plug</a></li>
+                    <li><a href="job-fair.html">Job Fair</a></li>
+                    <li><a href="commissioners.html">Commissioners</a></li>
+                    <li><a href="battle-of-budtenders.html">Battle of the Budtenders</a></li>
+                    <li><a href="sponsors.html">Sponsors</a></li>
+                    <li><a href="food.html">Food & Catering</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <p>© 2025 Mass Cannabis Expo - Battle of the Budtenders</p>
+            <p>For inquiries, contact: masscannabisexpo@gmail.com</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            // Form validation
+            const companyName = document.getElementById('companyName').value;
+            const contactName = document.getElementById('contactName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const packageSelected = document.getElementById('package').value;
+            
+            if (!companyName || !contactName || !email || !phone || !packageSelected) {
+                alert('Please fill out all required fields.');
+                e.preventDefault();
+                return false;
+            }
+            
+            return true;
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });

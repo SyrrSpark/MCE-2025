@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detailed schedule for Saturday, May 17, 2025 at the Western Massachusetts Cannabis Expo, featuring the Commissioners State of the Industry Address, VIP Network Lounge, and evening music festival.">
+    <meta name="keywords" content="cannabis expo saturday, cannabis commissioners, cannabis industry address, vip cannabis networking, cannabis music festival">
+    <title>Saturday Schedule | Western Massachusetts Cannabis Expo 2025</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Schedule Page Specific Styles */
+        .page-banner {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/schedule-saturday-banner.jpg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+        
+        .page-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .page-banner p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .schedule-nav {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .schedule-nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .day-link {
+            padding: 10px 25px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .day-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .day-link:hover:not(.active) {
+            background-color: #e9ecef;
+        }
+        
+        .schedule-highlights {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .highlights-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .schedule-timeline {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .timeline-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 120px;
+            width: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .timeline-time {
+            width: 120px;
+            padding-right: 30px;
+            text-align: right;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            padding-top: 15px;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-left: 30px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 116px;
+            width: 12px;
+            height: 12px;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            background-color: white;
+            z-index: 1;
+        }
+        
+        .timeline-title {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+        }
+        
+        .timeline-description {
+            margin-bottom: 15px;
+            color: var(--grey-color);
+        }
+        
+        .timeline-speakers {
+            padding-top: 15px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .speaker-name {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .speaker-role {
+            font-size: 0.9rem;
+            color: var(--grey-color);
+        }
+        
+        .event-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .free-badge {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .paid-badge {
+            background-color: #fd7e14;
+            color: white;
+        }
+        
+        .feature-badge {
+            background-color: #6610f2;
+            color: white;
+        }
+        
+        .vip-badge {
+            background-color: #D4AF37;
+            color: white;
+        }
+        
+        .schedule-footer {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .schedule-cta {
+            margin-top: 40px;
+        }
+        
+        .day-summary {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            margin-top: 40px;
+        }
+        
+        .summary-title {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .summary-list {
+            text-align: left;
+            list-style-type: none;
+        }
+        
+        .summary-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .summary-list li:before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .page-banner h1 {
+                font-size: 2.5rem;
+            }
+            
+            .schedule-nav-container {
+                flex-wrap: wrap;
+            }
+            
+            .day-link {
+                flex: 1;
+                text-align: center;
+                padding: 10px 15px;
+            }
+            
+            .timeline-line {
+                left: 70px;
+            }
+            
+            .timeline-time {
+                width: 70px;
+                font-size: 0.9rem;
+            }
+            
+            .timeline-content:before {
+                left: 66px;
+            }
+            
+            .timeline-content {
+                margin-left: 20px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="Western Massachusetts Cannabis Expo Logo"></a>
+            </div>
+            <nav id="main-nav">
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="meet-the-plug.html">Meet the Plug</a></li>
+                    <li><a href="job-fair.html">Job Fair</a></li>
+                    <li><a href="commissioners.html">Commissioners</a></li>
+                    <li><a href="battle-of-budtenders.html">Battle of the Budtenders</a></li>
+                    <li><a href="sponsors.html">Sponsors</a></li>
+                    <li><a href="food.html">Food & Catering</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>Saturday, May 17, 2025</h1>
+            <p>Day 2 of the Western Massachusetts Cannabis Expo</p>
+            <span class="event-badge paid-badge">TICKET REQUIRED</span>
+        </div>
+    </section>
+
+    <section class="schedule-nav">
+        <div class="container">
+            <div class="schedule-nav-container">
+                <a href="friday-schedule.html" class="btn day-link">Friday</a>
+                <a href="saturday-schedule.html" class="btn day-link active">Saturday</a>
+                <a href="schedule.html" class="btn day-link">Full Schedule</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule-highlights">
+        <div class="container">
+            <div class="highlights-container">
+                <h2>Saturday Highlights</h2>
+                <p>Saturday features our premier events including the VIP Network Lounge, B2B lunch, and the highly anticipated Commissioners State of the Industry Address and Panel.</p>
+                <p>This is your opportunity to hear directly from the Massachusetts Cannabis Control Commission about the current state and future of the cannabis industry in Massachusetts.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule-timeline">
+        <div class="container">
+            <h2>Saturday Timeline</h2>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">8:00 AM</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Speakers/Vendor/Sponsor/DJ Return</h3>
+                        <p class="timeline-description">The Meet the Plug event continues from Friday.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">10:00 AM</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Commissioners Arrive</h3>
+                        <p class="timeline-description">Commissioners are escorted to the Commissioners Lounge and briefed on the day's timeline, separate events, and goals.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">10:10 AM</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Commissioner Podcast Interviews</h3>
+                        <p class="timeline-description">Each Commissioner has a 10-minute podcast interview with predetermined and approved questions.</p>
+                        <div class="timeline-speakers">
+                            <p><span class="speaker-name">Commissioner Bruce Stebbins and Commissioner Nurys Camargo</span> - Social consumption discussion</p>
+                            <p><span class="speaker-name">Commissioner Travis Ahern</span> - Direction of the Mass Cannabis Industry</p>
+                            <p><span class="speaker-name">Commissioner Ava Callender Concepcion</span> - Suitability Standards</p>
+                            <p><span class="speaker-name">Commissioner Kimberly Roy</span> - HCA and her program</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">11:00 AM</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">THE MCE VIP NETWORK LOUNGE</h3>
+                        <p class="timeline-description">Selected attendees will have the rare opportunity to participate in a private, closed-door roundtable discussion with Massachusetts Cannabis Control Commissioners, state legislators, top industry executives, and key stakeholders. This exclusive event is designed to go beyond the public Q&A, offering a high-level, unfiltered dialogue about the future of the Massachusetts cannabis market.</p>
+                        <p>There will be photo opportunities with key leaders of the western Mass community, including Senator Adam Gomez, Springfield city Council Tracy Whitsfield, Mayor of Springfield, and many others.</p>
+                        <span class="event-badge vip-badge">VIP Event</span>
+                        <span class="event-badge feature-badge">Featured Event</span>
+                        <div class="timeline-links">
+                            <a href="commissioners.html#vip-lounge" class="btn secondary-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">12:00 PM</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">1st Speaker: MCR Labs</h3>
+                        <p class="timeline-description">Yasha Khan coordinates MCR Labs' marketing, outreach, and public relations efforts while also spearheading the organization's data science. He explains the challenges faced, including result manipulation by labs and the impact on public health.</p>
+                        <p>Yasha's Freedom of Information Act (FOIA) project aimed to gather testing data from 37 states, revealed significant discrepancies in potency and mold results. He will speak on this and other related topics.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">12:20 PM</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Commissioners Tour</h3>
+                        <p class="timeline-description">Commissioners tour the Job Fair floor and meet with employers and employees.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">12:30 PM</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">MCE B2B Lunch</h3>
+                        <p class="timeline-description">Catered by Mi-Cultra 2 cafe and Jazzy Wings. Business Spotlight: Attendees have the option of introducing themselves and their business for one minute when their name is drawn from a jar.</p>
+                        <span class="event-badge paid-badge">$50 per plate</span>
+                        <p><strong>Note:</strong> All proceeds go to pay for the meal.</p>
+                        <div class="timeline-links">
+                            <a href="food.html" class="btn secondary-btn">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">1:30 PM</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">2nd Speaker: Senator Adam Gomez</h3>
+                        <p class="timeline-description">Senator Gomez will speak on the Clean Slate Program, a legislative initiative that aims to automatically seal or expunge certain criminal records for individuals who have served their sentence and remained crime-free for a specified period.</p>
+                        <p>This gives individuals a "clean slate" to re-enter society without the burden of past convictions hindering their employment or other opportunities. It usually focuses on non-violent offenses.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">1:50 PM</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">3rd Speaker: Selia Williams, SEP Director</h3>
+                        <p class="timeline-description">The Massachusetts Cannabis Social Equity Program (SEP) is a statewide initiative designed to create sustainable pathways into the cannabis industry for individuals most impacted by the War on Drugs.</p>
+                        <p>The program offers free technical assistance and training to help participants succeed in various areas of the cannabis industry, including entrepreneurship, managerial-level workforce development, entry-level workforce development, and ancillary support for businesses that contract with the industry but do not hold a license.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">2:45 PM</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Commissioners State of the Industry Address</h3>
+                        <p class="timeline-description">This segment will be an annual platform where each Commissioner has 10 minutes to speak to the attendees about the current state of the Massachusetts cannabis industry and its future. They will address general industry concerns, speak on new and old programs, and their individual projects.</p>
+                        <p>There will be no questions for this segment.</p>
+                        <span class="event-badge paid-badge">$25 per person</span>
+                        <span class="event-badge feature-badge">Featured Event</span>
+                        <p><strong>Note:</strong> All money raised during this segment will be donated to the Social Equity Program.</p>
+                        <div class="timeline-links">
+                            <a href="commissioners.html#state-address" class="btn secondary-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">3:35 PM</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Meet the Commissioner Panel</h3>
+                        <p class="timeline-description">This is a question-answer period where attendees text their questions to the host, who in turn relays them to the panel.</p>
+                        <span class="event-badge feature-badge">Featured Event</span>
+                        <div class="timeline-links">
+                            <a href="commissioners.html#panel" class="btn secondary-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">5:00 PM</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Music Festival Begins</h3>
+                        <p class="timeline-description">The DJ will start the night with 90's and 2000's R&B Music. From there, we will transition into smooth Caribbean island music to set up for the old school Reggae artists that will carry on until 10:00.</p>
+                        <span class="event-badge paid-badge">Ticket Required</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">10:00 PM</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Event Concludes for the Day</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule-footer">
+        <div class="container">
+            <div class="day-summary">
+                <h3 class="summary-title">Saturday at a Glance</h3>
+                <ul class="summary-list">
+                    <li>Exclusive <strong>VIP Network Lounge</strong> with Commissioners and industry leaders (11:00 AM)</li>
+                    <li>Informative presentations from <strong>MCR Labs, Senator Adam Gomez, and SEP Director Selia Williams</strong></li>
+                    <li>Networking opportunities at the <strong>B2B Lunch</strong> ($50) featuring a Business Spotlight (12:30 PM)</li>
+                    <li>The highly anticipated <strong>Commissioners State of the Industry Address</strong> (2:45 PM)</li>
+                    <li>Engage directly with regulators at the <strong>Meet the Commissioner Panel</strong> (3:35 PM)</li>
+                    <li>Unwind at the <strong>Evening Music Festival</strong> featuring 90's R&B and Reggae music (5:00 PM)</li>
+                </ul>
+            </div>
+            
+            <div class="schedule-cta">
+                <p>Don't miss these exclusive industry insights and networking opportunities!</p>
+                <a href="contact.html#register" class="btn primary-btn">Purchase Tickets</a>
+                <a href="friday-schedule.html" class="btn secondary-btn">View Friday Schedule</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Western Massachusetts Cannabis Expo Logo">
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="meet-the-plug.html">Meet the Plug</a></li>
+                        <li><a href="job-fair.html">Job Fair</a></li>
+                        <li><a href="commissioners.html">Commissioners</a></li>
+                        <li><a href="battle-of-budtenders.html">Battle of the Budtenders</a></li>
+                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:masscannabisexpo@gmail.com">masscannabisexpo@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> 4 Open Square Way, Holyoke, MA 01040</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Western Massachusetts Cannabis Expo. All Rights Reserved. Must be 21+ to attend.</p>
+                <p>Organized by CannaGroup 180 LLC</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
